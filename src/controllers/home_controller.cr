@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   property found = [] of String
+  property current_gem : String?
 
   def index
     render("index.slang")
@@ -8,6 +9,7 @@ class HomeController < ApplicationController
   def search
     found.clear
     if gem = params["gem"]?
+      current_gem = gem
       msg = `gem install #{gem}`
       unless Dir.glob(File.expand_path("~/.gem/ruby/2.4.0/gems/*")).select(&.=~ /\/#{gem}-*/).empty?
         found << "send found: #{`grep -rn "\.\s*send" ~/.gem/ruby/*/gems/#{gem}-*/lib`.split('\n').size - 1}\n"
@@ -27,7 +29,7 @@ class HomeController < ApplicationController
         found << "attr_getter found (use getter keyword in crystal): #{`grep -rn "attr_getter" ~/.gem/ruby/*/gems/#{gem}-*/lib`.split('\n').size - 1}\n"
         found << "attr_setter found (use setter keyword in crystal): #{`grep -rn "attr_setter" ~/.gem/ruby/*/gems/#{gem}-*/lib`.split('\n').size - 1}\n"
       else
-        flash["error"] = "gem name not found"
+        flash["warning"] = "gem #{gem} not found"
       end
       found.select! do |item|
         !item.ends_with?(": 0\n")
