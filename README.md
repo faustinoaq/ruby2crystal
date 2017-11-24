@@ -6,7 +6,7 @@ Highly inspired by [Crystal for Rubyist](https://github.com/crystal-lang/crystal
 
 Also exists [Crystal for Rubyist](http://www.crystalforrubyists.com/) book :wink:
 
-![ruby2crystal](https://i.imgur.com/qWyGV1R.png)
+![ruby2crystal](https://i.imgur.com/i00aqW5.png)
 
 ## Installation
 
