@@ -15,7 +15,7 @@ shards build ruby2crystal
 ./bin/ruby2crystal
 ```
 
-# Assets
+## Assets
 
 ```shellsession
 npm install
