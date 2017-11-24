@@ -1,0 +1,46 @@
+version: '2'
+
+services:
+  web:
+    build: .
+    image: ruby2crystal
+    command: bash -c 'npm install && npm run watch'
+    working_dir: /app/local
+    volumes:
+      - '.:/app/local'
+
+  app:
+    build: .
+    image: ruby2crystal
+    command: 'amber watch'
+    working_dir: /app/local
+    environment:
+      DATABASE_URL: sqlite3:./db/ruby2crystal_development.db
+      SMTP_URL: mail:1025
+    ports:
+      - '3000:3000'
+    links:
+      - db
+      - mail
+    volumes:
+      - '.:/app/local'
+
+  migrate:
+    build: .
+    image: ruby2crystal
+    command: bash -c 'amber db migrate seed'
+    working_dir: /app/local
+    environment:
+      DATABASE_URL: sqlite3:./db/ruby2crystal_development.db
+    volumes:
+      - '.:/app/local'
+    links:
+      - db
+
+  mail:
+    image: drujensen/mailcatcher:latest
+    ports:
+      - '1080:1080'
+
+
+volumes:

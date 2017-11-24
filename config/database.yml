@@ -1,0 +1,2 @@
+sqlite:
+  database: sqlite3:./db/ruby2crystal_development.db
