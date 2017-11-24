@@ -2,7 +2,7 @@
 
 A proof of concept tool to help porting gems to shards.
 
-Higly inspired by [Crystal for Rubyist](https://github.com/crystal-lang/crystal/wiki/Crystal-for-Rubyists) wiki.
+Highly inspired by [Crystal for Rubyist](https://github.com/crystal-lang/crystal/wiki/Crystal-for-Rubyists) wiki.
 
 Also exists [Crystal for Rubyist](http://www.crystalforrubyists.com/) book :wink:
 
