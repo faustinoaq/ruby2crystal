@@ -6,20 +6,13 @@ Highly inspired by [Crystal for Rubyist](https://github.com/crystal-lang/crystal
 
 Also exists [Crystal for Rubyist](http://www.crystalforrubyists.com/) book :wink:
 
-![ruby2crystal](https://i.imgur.com/ouPu9gO.png)
+![ruby2crystal](https://i.imgur.com/Cut4D5q.png)
 
 ## Installation
 
 ```shellsession
 shards build ruby2crystal
 ./bin/ruby2crystal
-```
-
-## Assets
-
-```shellsession
-npm install
-npm run build
 ```
 
 ## Contributing

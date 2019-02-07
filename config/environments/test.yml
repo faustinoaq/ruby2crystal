@@ -1,19 +1,36 @@
-secret_key_base: GybU6n5yTpW2j1jGl8HBc4WNWk6QZa8CYesu48vLNRY
+secret_key_base: GAnWH61fiYeX13d9x8ek0U9tXP5Yjmw37FZT7EzWnBQ
 port: 3000
-name: ruby2crystal
-log: "::Logger.new(STDOUT)"
-log_level: "::Logger::INFO"
-color: true
+name: example
+
+logging:
+  severity: debug
+  colorize: true
+  filter:
+    - password
+    - confirm_password
+  context:
+    - request
+    - session
+    - headers
+    - cookies
+    - params
+
 host: 0.0.0.0
 port_reuse: false
-process_count: (ENV[%(AMBER_PROCESS_COUNT)]? || 1).to_i
-ssl_key_file:
-ssl_cert_file:
+process_count: 1
+# ssl_key_file:
+# ssl_cert_file:
 redis_url: "redis://localhost:6379"
+database_url: sqlite3:./db/example_test.db
+auto_reload: false
+
 session:
   key: amber.session
-  store: :signed_cookie
+  store: signed_cookie
   expires: 0
+
+smtp:
+  enabled: false
+
 secrets:
-  description: Store your test secrets credentials and settings here.
-  database: sqlite3:./db/ruby2crystal_test.db
+  description: Store your development secrets credentials and settings here.

@@ -1,1 +1,2 @@
-import Amber from 'amber'
+import 'bootstrap';
+import Amber from 'amber';

@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  RUBY_VERSION = "2.6.0"
+
   property found = [] of String
   property current_gem : String?
 
@@ -11,7 +13,7 @@ class HomeController < ApplicationController
     if gem = params["gem"]?
       current_gem = gem
       msg = `gem install #{gem}`
-      unless Dir.glob(File.expand_path("~/.gem/ruby/2.4.0/gems/*")).select(&.=~ /\/#{gem}-*/).empty?
+      unless Dir.glob(File.expand_path("~/.gem/ruby/#{RUBY_VERSION}/gems/*")).select(&.=~ /\/#{gem}-*/).empty?
         found << "send found: #{`grep -rn "\.\s*send" ~/.gem/ruby/*/gems/#{gem}-*/lib`.split('\n').size - 1}\n"
         found << "class << found: #{`grep -rn "class <<" ~/.gem/ruby/*/gems/#{gem}-*/lib`.split('\n').size - 1}\n"
         # found << "$` found: #{`grep -rn "$\`" ~/.gem/ruby/*/gems/#{gem}-*/lib`.split('\n').size - 1}\n"

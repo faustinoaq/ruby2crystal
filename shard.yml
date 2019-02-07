@@ -18,25 +18,30 @@ targets:
 dependencies:
   amber:
     github: amberframework/amber
-    version: 0.3.6
+    version: 0.11.3
+    #branch: master
 
-  granite_orm:
-    github: amberframework/granite-orm
-    version: ~> 0.7.7
+  granite:
+    github: amberframework/granite
+    version: ~> 0.15.0
 
   quartz_mailer:
     github: amberframework/quartz-mailer
-    version: ~> 0.2.0
+    version: ~> 0.5.1
 
   jasper_helpers:
     github: amberframework/jasper-helpers
-    version: ~> 0.1.6
+    version: ~> 0.2.1
 
   sqlite3:
     github: crystal-lang/crystal-sqlite3
-    version: ~> 0.8.3
+    version: ~> 0.10.0
+
+  citrine-i18n:
+    github: amberframework/citrine-i18n
+    version: 0.3.2
 
 development_dependencies:
   garnet_spec:
     github: amberframework/garnet-spec
-    version: ~> 0.1.1
+    version: ~> 0.2.1
