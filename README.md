@@ -1,5 +1,7 @@
 # ruby2crystal
 
+> Please, notice this app is just using a bunch of scripts to find "keywords" in ruby code, I heavily think there are better ways to do this :P
+
 A proof of concept tool to help porting gems to shards.
 
 Highly inspired by [Crystal for Rubyist](https://github.com/crystal-lang/crystal/wiki/Crystal-for-Rubyists) wiki.
